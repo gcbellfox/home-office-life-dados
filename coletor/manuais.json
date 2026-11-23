@@ -1,0 +1,19 @@
+{
+ "_leia": "Dados que não têm versão para máquina (só PDF ou página comum). Atualizar à mão todo mês, sempre com fonte, URL e mês de referência. Não preencher valores sem fonte.",
+ "cestaBasica": {
+  "fonte": "Pesquisa Nacional da Cesta Básica de Alimentos DIEESE/Conab, valores reproduzidos pelo Jornal do Comércio",
+  "url": "https://www.jornaldocomercio.com/economia/2026/11/1270152-dieese-cesta-basica-sobe-nas-27-capitais-em-outubro-sao-paulo-segue-com-a-cesta-mais-cara.html",
+  "referencia": "2026-10",
+  "coletadoEm": "2026-11-23",
+  "valores": {
+   "São Paulo/SP": 951.37,
+   "Rio de Janeiro/RJ": 939.39,
+   "Florianópolis/SC": 927.82,
+   "Cuiabá/MT": 924.82,
+   "Natal/RN": 678.05,
+   "Salvador/BA": 677.77,
+   "Maceió/AL": 661.69,
+   "Aracaju/SE": 618.61
+  }
+ }
+}

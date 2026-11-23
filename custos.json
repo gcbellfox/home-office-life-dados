@@ -1,0 +1,826 @@
+{
+ "versao": 1,
+ "geradoEm": "2026-11-23",
+ "capitais": {
+  "Rio Branco/AC": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 72.76,
+    "dormitorios": "1 dormitório",
+    "referencia": "2026-10",
+    "mediaNacional": true,
+    "nota": "Cidade fora da pesquisa FipeZAP: usa a média das cidades pesquisadas"
+   },
+   "tarifaEnergia": {
+    "valor": 0.82971,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EAC",
+    "referencia": "2026-08",
+    "vigencia": [
+     "2026-08-26",
+     "2026-12-12"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.318, DE 24 DE AGOSTO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Maceió/AL": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 57.56,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.85141,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EQUATORIAL AL",
+    "referencia": "2026-05",
+    "vigencia": [
+     "2026-05-03",
+     "2027-05-02"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.584, DE 28 DE ABRIL DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   },
+   "cestaBasica": {
+    "valor": 661.69,
+    "unidade": "R$ por mês",
+    "referencia": "2026-10",
+    "fonte": "Pesquisa Nacional da Cesta Básica de Alimentos DIEESE/Conab, valores reproduzidos pelo Jornal do Comércio",
+    "url": "https://www.jornaldocomercio.com/economia/2026/11/1270152-dieese-cesta-basica-sobe-nas-27-capitais-em-outubro-sao-paulo-segue-com-a-cesta-mais-cara.html",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23",
+    "coletaManual": true
+   }
+  },
+  "Macapá/AP": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 72.76,
+    "dormitorios": "1 dormitório",
+    "referencia": "2026-10",
+    "mediaNacional": true,
+    "nota": "Cidade fora da pesquisa FipeZAP: usa a média das cidades pesquisadas"
+   },
+   "tarifaEnergia": {
+    "valor": 0.82515,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "CEA",
+    "referencia": "2026-04",
+    "vigencia": [
+     "2026-04-13",
+     "2027-05-24"
+    ],
+    "ato": null,
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Manaus/AM": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 53.41,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.87571,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "Âmbar Amazonas",
+    "referencia": "2026-05",
+    "vigencia": [
+     "2026-05-26",
+     "2027-05-25"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.588, DE 19 DE MAIO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Salvador/BA": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 55.47,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.87773,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "COELBA",
+    "referencia": "2026-04",
+    "vigencia": [
+     "2026-04-22",
+     "2027-04-21"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.578, DE 22 DE ABRIL DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   },
+   "cestaBasica": {
+    "valor": 677.77,
+    "unidade": "R$ por mês",
+    "referencia": "2026-10",
+    "fonte": "Pesquisa Nacional da Cesta Básica de Alimentos DIEESE/Conab, valores reproduzidos pelo Jornal do Comércio",
+    "url": "https://www.jornaldocomercio.com/economia/2026/11/1270152-dieese-cesta-basica-sobe-nas-27-capitais-em-outubro-sao-paulo-segue-com-a-cesta-mais-cara.html",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23",
+    "coletaManual": true
+   }
+  },
+  "Fortaleza/CE": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 42.85,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.70175,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "ENEL CE",
+    "referencia": "2026-08",
+    "vigencia": [
+     "2026-08-26",
+     "2027-04-21"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.324, DE 24 DE AGOSTO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Brasília/DF": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 53.91,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.83429,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "Neoenergia Brasília",
+    "referencia": "2026-10",
+    "vigencia": [
+     "2026-10-22",
+     "2027-10-21"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.614, DE 22 DE OUTUBRO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Vitória/ES": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 56.7,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.84371,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EDP ES",
+    "referencia": "2026-08",
+    "vigencia": [
+     "2026-08-07",
+     "2027-08-06"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.600, DE 31 DE JULHO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Goiânia/GO": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 44.26,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.95439,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EQUATORIAL GO",
+    "referencia": "2026-10",
+    "vigencia": [
+     "2026-10-22",
+     "2027-10-21"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.613, DE 22 DE OUTUBRO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "São Luís/MA": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 58.62,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.88884,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EQUATORIAL MA",
+    "referencia": "2026-08",
+    "vigencia": [
+     "2026-08-28",
+     "2027-08-27"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.604, DE 26 DE AGOSTO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Cuiabá/MT": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 48.71,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.89942,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EMT",
+    "referencia": "2026-04",
+    "vigencia": [
+     "2026-04-08",
+     "2027-04-07"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.581, DE 22 DE ABRIL DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   },
+   "cestaBasica": {
+    "valor": 924.82,
+    "unidade": "R$ por mês",
+    "referencia": "2026-10",
+    "fonte": "Pesquisa Nacional da Cesta Básica de Alimentos DIEESE/Conab, valores reproduzidos pelo Jornal do Comércio",
+    "url": "https://www.jornaldocomercio.com/economia/2026/11/1270152-dieese-cesta-basica-sobe-nas-27-capitais-em-outubro-sao-paulo-segue-com-a-cesta-mais-cara.html",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23",
+    "coletaManual": true
+   }
+  },
+  "Campo Grande/MS": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 33.15,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.9866,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EMS",
+    "referencia": "2026-04",
+    "vigencia": [
+     "2026-04-24",
+     "2027-04-07"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.582, DE 22 DE ABRIL DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Belo Horizonte/MG": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 75.35,
+    "dormitorios": "1 dormitório",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.90329,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "CEMIG-D",
+    "referencia": "2026-05",
+    "vigencia": [
+     "2026-05-28",
+     "2027-05-27"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.589, DE 26 DE MAIO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Belém/PA": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 62.24,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 1.04322,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EQUATORIAL PA",
+    "referencia": "2026-09",
+    "vigencia": [
+     "2026-09-18",
+     "2027-08-06"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.608, DE 18 DE SETEMBRO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "João Pessoa/PB": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 52.62,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.7097,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EPB",
+    "referencia": "2026-08",
+    "vigencia": [
+     "2026-08-28",
+     "2027-08-27"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.603, DE 28 DE AGOSTO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Curitiba/PR": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 50.01,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.76802,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "COPEL-DIS",
+    "referencia": "2026-06",
+    "vigencia": [
+     "2026-06-24",
+     "2027-06-23"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.592, DE 23 DE JUNHO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Recife/PE": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 64.94,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.79886,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "Neoenergia PE",
+    "referencia": "2026-04",
+    "vigencia": [
+     "2026-04-29",
+     "2027-04-28"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.583, DE 28 DE ABRIL DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Teresina/PI": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 32.27,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.94669,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "EQUATORIAL PI",
+    "referencia": "2026-01",
+    "vigencia": [
+     "2026-01-01",
+     "2026-12-01"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.555, DE 25 DE NOVEMBRO DE 2025",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Rio de Janeiro/RJ": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 79.11,
+    "dormitorios": "1 dormitório",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.88056,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "LIGHT SESA",
+    "referencia": "2026-03",
+    "vigencia": [
+     "2026-03-15",
+     "2027-03-14"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.571, DE 10 DE MARÇO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   },
+   "cestaBasica": {
+    "valor": 939.39,
+    "unidade": "R$ por mês",
+    "referencia": "2026-10",
+    "fonte": "Pesquisa Nacional da Cesta Básica de Alimentos DIEESE/Conab, valores reproduzidos pelo Jornal do Comércio",
+    "url": "https://www.jornaldocomercio.com/economia/2026/11/1270152-dieese-cesta-basica-sobe-nas-27-capitais-em-outubro-sao-paulo-segue-com-a-cesta-mais-cara.html",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23",
+    "coletaManual": true
+   }
+  },
+  "Natal/RN": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 45.57,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.7758,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "COSERN",
+    "referencia": "2026-04",
+    "vigencia": [
+     "2026-04-22",
+     "2027-04-21"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.573, DE 22 DE ABRIL DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   },
+   "cestaBasica": {
+    "valor": 678.05,
+    "unidade": "R$ por mês",
+    "referencia": "2026-10",
+    "fonte": "Pesquisa Nacional da Cesta Básica de Alimentos DIEESE/Conab, valores reproduzidos pelo Jornal do Comércio",
+    "url": "https://www.jornaldocomercio.com/economia/2026/11/1270152-dieese-cesta-basica-sobe-nas-27-capitais-em-outubro-sao-paulo-segue-com-a-cesta-mais-cara.html",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23",
+    "coletaManual": true
+   }
+  },
+  "Porto Alegre/RS": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 47.11,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.822,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "CEEE-D",
+    "referencia": "2026-01",
+    "vigencia": [
+     "2026-01-01",
+     "2026-11-21"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.547, DE 18 DE NOVEMBRO DE 2025",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Porto Velho/RO": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 72.76,
+    "dormitorios": "1 dormitório",
+    "referencia": "2026-10",
+    "mediaNacional": true,
+    "nota": "Cidade fora da pesquisa FipeZAP: usa a média das cidades pesquisadas"
+   },
+   "tarifaEnergia": {
+    "valor": 0.76244,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "ERO",
+    "referencia": "2026-08",
+    "vigencia": [
+     "2026-08-26",
+     "2026-12-12"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.320, DE 24 DE AGOSTO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Boa Vista/RR": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 72.76,
+    "dormitorios": "1 dormitório",
+    "referencia": "2026-10",
+    "mediaNacional": true,
+    "nota": "Cidade fora da pesquisa FipeZAP: usa a média das cidades pesquisadas"
+   },
+   "tarifaEnergia": {
+    "valor": 0.78947,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "Âmbar Roraima",
+    "referencia": "2026-01",
+    "vigencia": [
+     "2026-01-25",
+     "2027-01-24"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.565, DE 20 DE JANEIRO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  },
+  "Florianópolis/SC": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 62.19,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.75975,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "CELESC",
+    "referencia": "2026-08",
+    "vigencia": [
+     "2026-08-22",
+     "2027-08-21"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.602, DE 21 DE AGOSTO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   },
+   "cestaBasica": {
+    "valor": 927.82,
+    "unidade": "R$ por mês",
+    "referencia": "2026-10",
+    "fonte": "Pesquisa Nacional da Cesta Básica de Alimentos DIEESE/Conab, valores reproduzidos pelo Jornal do Comércio",
+    "url": "https://www.jornaldocomercio.com/economia/2026/11/1270152-dieese-cesta-basica-sobe-nas-27-capitais-em-outubro-sao-paulo-segue-com-a-cesta-mais-cara.html",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23",
+    "coletaManual": true
+   }
+  },
+  "São Paulo/SP": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 86.14,
+    "dormitorios": "1 dormitório",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.78938,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "ELETROPAULO",
+    "referencia": "2026-07",
+    "vigencia": [
+     "2026-07-04",
+     "2027-07-03"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.596, DE 3 DE JULHO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   },
+   "cestaBasica": {
+    "valor": 951.37,
+    "unidade": "R$ por mês",
+    "referencia": "2026-10",
+    "fonte": "Pesquisa Nacional da Cesta Básica de Alimentos DIEESE/Conab, valores reproduzidos pelo Jornal do Comércio",
+    "url": "https://www.jornaldocomercio.com/economia/2026/11/1270152-dieese-cesta-basica-sobe-nas-27-capitais-em-outubro-sao-paulo-segue-com-a-cesta-mais-cara.html",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23",
+    "coletaManual": true
+   }
+  },
+  "Aracaju/SE": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 36.4,
+    "dormitorios": "todos os tamanhos",
+    "referencia": "2026-10"
+   },
+   "tarifaEnergia": {
+    "valor": 0.75461,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "ESE",
+    "referencia": "2026-04",
+    "vigencia": [
+     "2026-04-22",
+     "2027-04-21"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.575, DE 22 DE ABRIL DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   },
+   "cestaBasica": {
+    "valor": 618.61,
+    "unidade": "R$ por mês",
+    "referencia": "2026-10",
+    "fonte": "Pesquisa Nacional da Cesta Básica de Alimentos DIEESE/Conab, valores reproduzidos pelo Jornal do Comércio",
+    "url": "https://www.jornaldocomercio.com/economia/2026/11/1270152-dieese-cesta-basica-sobe-nas-27-capitais-em-outubro-sao-paulo-segue-com-a-cesta-mais-cara.html",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23",
+    "coletaManual": true
+   }
+  },
+  "Palmas/TO": {
+   "aluguelM2": {
+    "fonte": "Índice FipeZAP (FIPE e ZAP), preço médio anunciado de locação residencial",
+    "url": "https://downloads.fipe.org.br/indices/fipezap/fipezap-serieshistoricas.xlsx",
+    "tipo": "observado",
+    "coletadoEm": "2026-11-23",
+    "unidade": "R$/m²",
+    "valor": 72.76,
+    "dormitorios": "1 dormitório",
+    "referencia": "2026-10",
+    "mediaNacional": true,
+    "nota": "Cidade fora da pesquisa FipeZAP: usa a média das cidades pesquisadas"
+   },
+   "tarifaEnergia": {
+    "valor": 0.99278,
+    "unidade": "R$/kWh sem impostos",
+    "distribuidora": "ETO",
+    "referencia": "2026-08",
+    "vigencia": [
+     "2026-08-26",
+     "2027-07-03"
+    ],
+    "ato": "RESOLUÇÃO HOMOLOGATÓRIA Nº 3.323, DE 24 DE AGOSTO DE 2026",
+    "fonte": "ANEEL, dados abertos: tarifas homologadas das distribuidoras (TUSD + TE, residencial B1 convencional)",
+    "url": "https://dadosabertos.aneel.gov.br/dataset/tarifas-distribuidoras-energia-eletrica",
+    "tipo": "oficial",
+    "coletadoEm": "2026-11-23"
+   }
+  }
+ },
+ "avisos": []
+}
