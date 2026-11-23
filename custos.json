@@ -822,5 +822,7 @@
    }
   }
  },
- "avisos": []
+ "avisos": [
+  "tarifaEnergia: falhou (<urlopen error timed out>); mantidos os valores anteriores"
+ ]
 }
