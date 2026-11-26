@@ -1,5 +1,5 @@
 # Coleta os dados do Home Office Life e publica os arquivos atualizados.
-# - oportunidades.json (anúncios reais de trabalho): todo dia
+# - mercado.json (preços da B3, Selic/CDI/IPCA do Banco Central, Tesouro Direto e rendimentos dos FIIs na CVM): todo dia
 # - custos.json (custos de vida das capitais): também roda todo dia, mas as fontes só mudam uma vez por mês
 name: Coletar dados
 
@@ -21,18 +21,16 @@ jobs:
           python-version: '3.12'
       - name: Custos das capitais
         run: python coletor/coletar.py
-      - name: Anúncios reais de trabalho
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python coletor/oportunidades.py
+      - name: Mercado (B3, Banco Central, Tesouro e CVM)
+        run: python coletor/mercado.py
       - name: Guardar os arquivos novos (se mudaram)
         run: |
-          if git diff --quiet custos.json oportunidades.json; then
+          if git diff --quiet custos.json mercado.json 2>/dev/null && ! git ls-files --others --exclude-standard | grep -q mercado.json; then
             echo "Nada mudou."
           else
             git config user.name "coletor-automatico"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add custos.json oportunidades.json
+            git add custos.json mercado.json
             git commit -m "Coleta automática ($(date +%Y-%m-%d))"
             git push
           fi
