@@ -6,6 +6,9 @@ Só fontes oficiais e abertas (nada de sites que proíbem a coleta, como o Inves
 - Banco Central (SGS): Selic meta (432), CDI diário (12), IPCA 12 meses (13522)
 - Tesouro Transparente: preços e taxas do Tesouro Direto (dados abertos)
 - CVM, informe mensal dos FIIs: dividend yield do mês (dado oficial informado pelo fundo)
+- B3, proventos em dinheiro das empresas listadas (valor por ação, data com): dividendos e JCP das ações
+
+Nenhum número é inventado: ativo sem dado real de proventos fica SEM dividendo (o jogo não compra).
 
 Resultado: mercado.json. Só usa Python padrão. Uso: python coletor/mercado.py
 O jogo usa esses dados como PONTO DE PARTIDA: o mercado do jogo é simulado a partir deles.
@@ -28,6 +31,7 @@ BCB = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.{}/dados/ultimos/{}?formato
 TESOURO = ('https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/resource/'
            '796d2059-14e9-44e3-80c9-2d9e30b405c1/download/PrecoTaxaTesouroDireto.csv')
 CVM_FII = 'https://dados.cvm.gov.br/dados/FII/DOC/INF_MENSAL/DADOS/inf_mensal_fii_{}.zip'
+B3_PROVENTOS = 'https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/{}'
 AGENTE = {'User-Agent': 'home-office-life-coletor (simulador educativo)'}
 
 # ativos do jogo (os mais negociados e conhecidos de cada tipo); quem não aparecer nos dados fica de fora
@@ -51,7 +55,7 @@ def baixar(url, tentativas=3):
 
 
 # ===== B3: preços de fechamento =====
-def ler_cotahist(conteudo, precos, nomes):
+def ler_cotahist(conteudo, precos, nomes, isins=None):
     """lê um arquivo COTAHIST (zip) linha por linha e guarda só os ativos do jogo (mercado à vista)"""
     with zipfile.ZipFile(io.BytesIO(conteudo)) as z:
         with z.open(z.namelist()[0]) as f:
@@ -65,10 +69,12 @@ def ler_cotahist(conteudo, precos, nomes):
                 data = f'{linha[2:6]}-{linha[6:8]}-{linha[8:10]}'
                 precos.setdefault(ticker, {})[data] = int(linha[108:121]) / 100
                 nomes[ticker] = linha[27:39].strip()
+                if isins is not None:
+                    isins[ticker] = linha[230:242].strip()
 
 
 def coletar_b3(hoje):
-    precos, nomes = {}, {}
+    precos, nomes, isins = {}, {}, {}
     # últimos 12 meses fechados (arquivos mensais) + dias do mês atual (arquivos diários)
     mes = dt.date(hoje.year, hoje.month, 1)
     meses = []
@@ -79,7 +85,7 @@ def coletar_b3(hoje):
         nome = f'COTAHIST_M{m.month:02d}{m.year}.ZIP'
         print(f'  B3 {nome}')
         try:
-            ler_cotahist(baixar(B3 + nome), precos, nomes)
+            ler_cotahist(baixar(B3 + nome), precos, nomes, isins)
         except Exception as e:  # noqa: BLE001
             print(f'    não deu: {e}')
     d = dt.date(hoje.year, hoje.month, 1)
@@ -87,12 +93,12 @@ def coletar_b3(hoje):
         if d.weekday() < 5:
             nome = f'COTAHIST_D{d.day:02d}{d.month:02d}{d.year}.ZIP'
             try:
-                ler_cotahist(baixar(B3 + nome, 1), precos, nomes)
+                ler_cotahist(baixar(B3 + nome, 1), precos, nomes, isins)
                 print(f'  B3 {nome}')
             except Exception:  # noqa: BLE001
                 pass                                      # feriado ou ainda não publicado
         d += dt.timedelta(days=1)
-    return precos, nomes
+    return precos, nomes, isins
 
 
 def resumo_ativo(serie):
@@ -100,8 +106,9 @@ def resumo_ativo(serie):
     datas = sorted(serie)
     valores = [serie[d] for d in datas]
     rets = [math.log(b / a) for a, b in zip(valores, valores[1:]) if a > 0 and b > 0]
-    # saltos de mais de 40% num dia quase sempre são desdobramento/grupamento (o arquivo não ajusta): ficam de fora
-    rets = [r for r in rets if abs(r) < 0.34]
+    # o arquivo da B3 não ajusta desdobramento/grupamento: o preço dobra ou cai pela metade (ou mais) num dia.
+    # Só esses saltos ficam de fora; quedas fortes de verdade (ex.: BBAS3 -31% em out/2026) contam.
+    rets = [r for r in rets if abs(r) < math.log(1.9)]
     vol = statistics.pstdev(rets) * math.sqrt(252) if len(rets) > 20 else None
     semanal = [[d, serie[d]] for i, d in enumerate(datas) if i % 5 == 0 or i == len(datas) - 1]
     return {
@@ -110,6 +117,52 @@ def resumo_ativo(serie):
         'retorno12m': round(math.exp(sum(rets)) - 1, 4) if rets else None,
         'historico': semanal,
     }
+
+
+# ===== B3: proventos em dinheiro das ações (dividendos e JCP) =====
+def proventos_b3(ticker, isin):
+    """proventos por ação do papel (pelo ISIN): lista de (data com, valor, tipo)"""
+    import base64, time
+    pedido = base64.b64encode(json.dumps({'issuingCompany': ticker[:4], 'language': 'pt-br'}).encode()).decode()
+    dados = json.loads(baixar(B3_PROVENTOS.format(pedido)))
+    time.sleep(0.6)                                        # sem pressa: uma empresa por vez
+    lista = []
+    for x in (dados[0].get('cashDividends') or []) if dados else []:
+        if x.get('isinCode') != isin:
+            continue
+        try:
+            d = dt.datetime.strptime(x['lastDatePrior'], '%d/%m/%Y').date()
+            v = float(x['rate'].replace('.', '').replace(',', '.'))
+        except (KeyError, ValueError):
+            continue
+        lista.append((d, v, x.get('label', '')))
+    return lista
+
+
+def dy_acoes(precos, isins, hoje):
+    """dividendo por ação dos últimos 12 meses (soma real) e média dos últimos 3 anos, pela data com"""
+    resultado = {}
+    for t in ACOES:
+        if t not in isins or t not in precos:
+            continue
+        try:
+            lista = proventos_b3(t, isins[t])
+        except Exception as e:  # noqa: BLE001
+            print(f'  proventos {t}: não deu ({e})')
+            continue
+        if not lista:                                      # a B3 não mostrou nada: sem dado (não é prova de zero)
+            print(f'  {t}: sem proventos na B3 (fica sem dado)')
+            continue
+        um_ano = sum(v for d, v, _ in lista if 0 <= (hoje - d).days <= 365)
+        preco = precos[t][max(precos[t])]
+        pagamentos = sorted([[d.isoformat(), round(v, 6), r] for d, v, r in lista if 0 <= (hoje - d).days <= 365])
+        resultado[t] = {
+            'valor': round(um_ano / preco, 4) if preco else 0, 'tipo': 'oficial',
+            'porAcao12m': round(um_ano, 6), 'pagamentos12m': pagamentos,
+            'fonte': 'B3, proventos em dinheiro (dividendos e JCP com data com nos últimos 12 meses, valor bruto por ação)',
+        }
+        print(f'  {t}: R$ {um_ano:.4f} por ação em 12 meses ({um_ano / preco * 100:.1f}%)')
+    return resultado
 
 
 # ===== Banco Central =====
@@ -202,13 +255,15 @@ def main():
     hoje = dt.date.today()
     manuais = json.loads(MANUAIS.read_text(encoding='utf-8')) if MANUAIS.exists() else {}
     print('B3...')
-    precos, nomes = coletar_b3(hoje)
+    precos, nomes, isins = coletar_b3(hoje)
     print('Banco Central...')
     indicadores = coletar_bcb()
     print('Tesouro...')
     tesouro = coletar_tesouro()
     print('CVM (FIIs)...')
     dy_fii = coletar_dy_fiis(hoje.year)
+    print('B3 (proventos das ações)...')
+    dy_acao = dy_acoes(precos, isins, hoje)
     ativos = []
     for t in ACOES + FIIS + ETFS:
         if t not in precos or len(precos[t]) < 30:
@@ -216,15 +271,14 @@ def main():
             continue
         r = resumo_ativo(precos[t])
         info = manuais.get('ativos', {}).get(t, {})
-        dy = dy_fii.get(t)
-        if not dy and info.get('dy') is None and TIPO[t] == 'fii':
-            info = {**info, 'dy': manuais.get('dyFiiPadrao', 0.10)}     # FII sem dado na CVM: estimativa
-        if not dy and info.get('dy') is not None:
-            dy = {'valor': info['dy'], 'tipo': 'estimativa', 'fonte': manuais.get('fonteDy', 'Estimativa do jogo')}
+        # só dado real: FII pela CVM, ação pela B3; ETF desses não distribui. Sem dado real = sem dividendo
+        dy = dy_fii.get(t) or dy_acao.get(t)
+        if TIPO[t] == 'etf':
+            dy = {'valor': 0, 'tipo': 'oficial', 'fonte': 'O ETF reinveste os proventos (não distribui)'}
         ativos.append({'ticker': t, 'tipo': TIPO[t], 'nome': info.get('nome') or nomes.get(t, t), 'setor': info.get('setor'),
                        **r, 'dy': dy})
     saida = {
-        'versao': 1, 'geradoEm': hoje.isoformat(),
+        'versao': 2, 'geradoEm': hoje.isoformat(),
         'aviso': 'Dados reais usados como ponto de partida de um mercado SIMULADO. Não é recomendação de investimento.',
         'fontes': {'b3': 'B3, séries históricas COTAHIST (fechamento diário, mercado à vista)'},
         'indicadores': indicadores, 'tesouro': tesouro, 'ativos': ativos,
