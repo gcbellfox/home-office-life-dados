@@ -2,7 +2,7 @@
 
 Dados reais usados pelo jogo **Home Office Life**, atualizados sozinhos todo dia pelo GitHub Actions e publicados pelo GitHub Pages:
 - `custos.json`: custos de vida das 27 capitais;
-- `oportunidades.json`: anúncios reais de trabalho online (freelas e vagas remotas).
+- `mercado.json`: ponto de partida real do mercado simulado (ações, FIIs, ETFs, Tesouro e indicadores).
 
 ## O que tem no arquivo
 Para cada capital, cada dado guarda **fonte, link, mês de referência, data da coleta e tipo** (`oficial` = órgão ou pesquisa oficial; `observado` = preços anunciados).
@@ -23,18 +23,18 @@ Capitais fora da pesquisa FipeZAP (Rio Branco, Macapá, Porto Velho, Boa Vista e
 ## Rodar à mão
 ```
 python coletor/coletar.py
+python coletor/mercado.py
 ```
 Precisa só do Python 3, sem bibliotecas extras.
 
-## Anúncios reais de trabalho (`oportunidades.json`)
-| Fonte | O que traz | Observação |
+## Mercado (`mercado.json`)
+| Dado | Fonte | Como é coletado |
 |---|---|---|
-| Comunidades de vagas no GitHub (frontendbr, backend-br, react-brasil) | Vagas remotas brasileiras de tecnologia | API pública do GitHub |
-| Remotive | Vagas remotas internacionais abertas a quem está no Brasil ou na América Latina | A Remotive pede: mostrar o link original e citar a Remotive como fonte |
-| Jobicy | Vagas remotas internacionais | Link para o anúncio original |
-| Freelancer.com | Projetos de freela com orçamento | API pública de projetos; o nome do cliente não é guardado |
-| Banco Central (PTAX) | Cotação oficial do dólar, euro e outras moedas | Converte os orçamentos para reais |
+| Preços e histórico de 12 meses (ações, FIIs, ETFs) | B3, arquivos COTAHIST | Arquivos públicos diários e mensais |
+| Dividendos e JCP das ações (últimos 12 meses, por data com) | B3, proventos em dinheiro das empresas listadas | Consulta pública por empresa |
+| Rendimento dos FIIs | CVM, informe mensal dos fundos | Dados abertos da CVM |
+| Selic, CDI e IPCA | Banco Central (SGS 432, 12 e 13522) | API pública |
+| Títulos do Tesouro Direto | Tesouro Transparente | Planilha pública |
 
-- Mostra o nome da **empresa** como está no anúncio público. **Nunca** guarda dados pessoais (nome de cliente pessoa física, email, telefone).
-- O jogo **não envia proposta real** a ninguém. O jogador vê o anúncio original e decide se tenta na vida real.
-- Plataformas cujos termos não permitem coleta automática (como Workana, 99Freelas e GetNinjas) **não são coletadas**: o jogo só indica os sites.
+- Ativo sem dado real de proventos fica **sem dado** (o jogo não compra). Nada é estimado.
+- O Investidor10 não é coletado (os termos proíbem): o jogo só mostra o link da página do ativo.
